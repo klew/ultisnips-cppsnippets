@@ -54,37 +54,32 @@ endsnippet
 
 # Loops
 snippet for "for loop (for)" b
-for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet fors "for int loop (fori)" b
-for (size_t ${2:i} = 0; $2 < ${1:count}; ${3:++$2})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+for (size_t ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet foru "for unsigned loop (foru)" b
-for (unsigned ${2:i} = 0u; $2 < ${1:count}; ${3:++$2})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+for (unsigned ${2:i} = 0u; $2 < ${1:count}; ${3:++$2}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet while "while loop" b
-while(${1:/* condition */})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+while(${1:/* condition */}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet do "do...while loop (do)" b
-do 
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+do {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 } while(${1:/* condition */});
 endsnippet
 
@@ -99,54 +94,49 @@ endsnippet
 
 # Conditionals
 snippet switch "switch" b
-switch(${1})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+switch (${1}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet case "case" b
-case ${1}:
-	${0}
-	break;
+case ${1}: {
+  ${0}
+  break;
+}
 endsnippet
 
 snippet default "default" b
-default: 
-	${0}
-	break;
+default: {
+  ${0}
+  break;
+}
 endsnippet
 
 snippet if "if .. (if)"
-if (${1:/* condition */})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+if (${1:/* condition */}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet else "else .. (else)"
-else 
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+else {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
 snippet ifel "if .. else (ife)"
-if (${1:/* condition */})
-{
-	${2:/* code */}
-}
-else
-{
-	${3:/* else */}
+if (${1:/* condition */}) {
+  ${2:/* code */}
+} else {
+  ${3:/* else */}
 }
 endsnippet
 
 # Functions
 snippet func "function" b
-${1:void} ${2:foo}(${3})
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+${1:void} ${2:foo}(${3}) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
 }
 endsnippet
 
@@ -155,9 +145,8 @@ ${1:void} ${2:function_name}(${3});
 endsnippet
 
 snippet enum "Enumeration" b
-enum ${1:name}
-{ 
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* values *\/)/}}
+enum ${1:name} { 
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* values *\/)/}}
 };
 endsnippet
 
@@ -166,15 +155,14 @@ typedef ${1:int} ${2:MyCustomType};
 endsnippet
 
 snippet struct "struct"
-struct ${1:`!p snip.rv = (snip.basename or "name")`}
-{
-	${0}
+struct ${1:`!p snip.rv = (snip.basename or "name")`} {
+  ${0}
 };
 endsnippet
 
 snippet block "block of code"
 {
-	${0:${VISUAL}}
+  ${0:${VISUAL}}
 }
 endsnippet
 
@@ -194,15 +182,14 @@ endsnippet
 
 # main function
 snippet main "main() (main)" b
-int main(int argc, char *argv[])
-{
-	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
-	return 0;
+int main(int argc, char *argv[]) {
+  ${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+  return 0;
 }
 endsnippet
 
 snippet todo "TODO"
-// TODO: ${0}
+// TODO(${0:klew}): ${1:${VISUAL}}
 endsnippet
 
 # vim:ft=snippets:
